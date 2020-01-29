@@ -880,9 +880,9 @@ public class RNFSManager extends ReactContextBaseJavaModule {
     long freeSpaceEx = 0;
     if (android.os.Build.VERSION.SDK_INT >= 18) {
       totalSpace = stat.getTotalBytes();
-      freeSpace = stat.getFreeBytes();
+      freeSpace = stat.getAvailableBytes();
       totalSpaceEx = statEx.getTotalBytes();
-      freeSpaceEx = statEx.getFreeBytes();
+      freeSpaceEx = statEx.getAvailableBytes();
     } else {
       long blockSize = stat.getBlockSize();
       totalSpace = blockSize * stat.getBlockCount();
